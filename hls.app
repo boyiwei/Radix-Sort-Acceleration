@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="" name="Radix_Sort_Acceleration">
+<project xmlns="com.autoesl.autopilot.project" top="radix_sort" name="Radix_Sort_Acceleration">
     <includePaths/>
     <libraryPaths/>
     <Simulation>
