@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="input_bucket.c" path="/home/boyiw7/Radix_Sort_Acceleration/input_bucket.c"/>
+  </source>
+  <testbench>
+    <originFiles name="radix_sort_tb.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_sort_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
