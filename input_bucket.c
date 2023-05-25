@@ -15,7 +15,7 @@ void input_bucket_step(int i, int sorted_data[dataset_size], int bucket[16][data
 }
 
 
-void input_bucket(int i, int sorted_data[dataset_size], int bucket[2][16][dataset_size/16], int bucket_pointer[2][16]) {
+void input_bucket(int i, int sorted_data[dataset_size], int bucket[16][16][dataset_size/16], int bucket_pointer[16][16]) {
 //#pragma HLS DATAFLOW
     input_bucket_step(i, sorted_data, bucket[0], bucket_pointer[0], 0);
     input_bucket_step(i, sorted_data, bucket[1], bucket_pointer[1], dataset_size/16);
