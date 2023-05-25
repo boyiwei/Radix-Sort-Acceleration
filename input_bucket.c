@@ -42,8 +42,6 @@ void output_bucket_step1(int i,
 		int bucket_pointer0_8, int bucket_pointer0_9, int bucket_pointer0_10, int bucket_pointer0_11,
 		int bucket_pointer0_12, int bucket_pointer0_13, int bucket_pointer0_14, int bucket_pointer0_15,
 		int bucket_pointer1[16]){
-	// l: lth bucket. Corresponding to lth radix number.
-//#pragma HLS DATAFLOW
 
 	output_bucket_step0(i, bucket0_0, bucket1, bucket_pointer0_0, bucket_pointer1);
 	output_bucket_step0(i, bucket0_1, bucket1, bucket_pointer0_1, bucket_pointer1);
@@ -61,7 +59,6 @@ void output_bucket_step1(int i,
 	output_bucket_step0(i, bucket0_13, bucket1, bucket_pointer0_13, bucket_pointer1);
 	output_bucket_step0(i, bucket0_14, bucket1, bucket_pointer0_14, bucket_pointer1);
 	output_bucket_step0(i, bucket0_15, bucket1, bucket_pointer0_15, bucket_pointer1);
-//	output_bucket_step0(i, bucket0[15][l], bucket1, bucket_pointer0[15][l], bucket_pointer1);
 
 }
 
@@ -82,7 +79,6 @@ void output_bucket(int i, int bucket0[16][16][dataset_size/16], int bucket1[16][
     int ith_radix;
 
     output_bucket_temp1:
-//#pragma HLS DATAFLOW
 	output_bucket_step1(i,
 				bucket0[0][0], bucket0[1][0], bucket0[2][0], bucket0[3][0],
 				bucket0[4][0], bucket0[5][0], bucket0[6][0], bucket0[7][0],
@@ -259,9 +255,6 @@ void output_bucket(int i, int bucket0[16][16][dataset_size/16], int bucket1[16][
 				bucket_pointer0[8][15], bucket_pointer0[9][15], bucket_pointer0[10][15], bucket_pointer0[11][15],
 				bucket_pointer0[12][15], bucket_pointer0[13][15], bucket_pointer0[14][15], bucket_pointer0[15][15],
 				bucket_pointer1[15]);
-
-
-//	output_bucket_step1(i, bucket0, bucket1[15], bucket_pointer0, bucket_pointer1[15], 15);
 
     clear_original_bucket_pointer:
     for(n=0; n<16; n++){
