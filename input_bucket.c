@@ -16,23 +16,10 @@ void input_bucket_step(int i, int sorted_data[dataset_size], int bucket[16][data
 
 
 void input_bucket(int i, int sorted_data[dataset_size], int bucket[16][16][dataset_size/16], int bucket_pointer[16][16]) {
+	for(int j=0; j<16; j++){
 //#pragma HLS DATAFLOW
-    input_bucket_step(i, sorted_data, bucket[0], bucket_pointer[0], 0);
-    input_bucket_step(i, sorted_data, bucket[1], bucket_pointer[1], dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[2], bucket_pointer[2], 2*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[3], bucket_pointer[3], 3*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[4], bucket_pointer[4], 4*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[5], bucket_pointer[5], 5*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[6], bucket_pointer[6], 6*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[7], bucket_pointer[7], 7*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[8], bucket_pointer[8], 8*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[9], bucket_pointer[9], 9*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[10], bucket_pointer[10], 10*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[11], bucket_pointer[11], 11*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[12], bucket_pointer[12], 12*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[13], bucket_pointer[13], 13*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[14], bucket_pointer[14], 14*dataset_size/16);
-    input_bucket_step(i, sorted_data, bucket[15], bucket_pointer[15], 15*dataset_size/16);
+		input_bucket_step(i, sorted_data, bucket[j], bucket_pointer[j], j*dataset_size/16);
+	}
 
 }
 
