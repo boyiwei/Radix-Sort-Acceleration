@@ -4,23 +4,16 @@
 #define bit_width_hex bit_width_bin/4
 
 
-void input_bucket_step(int i, int sorted_data[dataset_size], int bucket[16][dataset_size/16], int bucket_pointer[16], int start){
-    for (int j = start; j-start < dataset_size/16; j++) {
-#pragma HLS LOOP_TRIPCOUNT min=dataset_size/16 max=dataset_size/16
-        int shifted = sorted_data[j] >> (i * 4);
-        int ith_radix = shifted & 0xf;
-        bucket[ith_radix][bucket_pointer[ith_radix]] = sorted_data[j];
-        bucket_pointer[ith_radix] += 1;
+void input_bucket(int data[dataset_size], int bucket[16][16][dataset_size/16], int bucket_pointer[16][16]){
+    for (int j = 0; j < dataset_size; j++) {
+#pragma HLS PIPELINE
+        int shifted0 = data[j] >> 4;	
+		int shifted1 = data[j] >> 8;
+        int radix0 = shifted0 & 0xf;
+		int radix1 = (shifted1 >> 4) & 0xf;
+		bucket[radix0][radix1][bucket_pointer[radix0][radix1]] = data[j];
+        bucket_pointer[radix0][radix1] += 1;
     }
-}
-
-
-void input_bucket(int i, int sorted_data[dataset_size], int bucket[16][16][dataset_size/16], int bucket_pointer[16][16]) {
-	for(int j=0; j<16; j++){
-//#pragma HLS DATAFLOW
-		input_bucket_step(i, sorted_data, bucket[j], bucket_pointer[j], j*dataset_size/16);
-	}
-
 }
 
 
@@ -321,10 +314,10 @@ void radix_sort(int data[dataset_size], int sorted_data[dataset_size]){
     int id = 0;
 
     first_round_sort:
-    input_bucket(0, data, bucket_0, bucket_pointer_0);
+    input_bucket(data, bucket_0, bucket_pointer_0);
     id = 1 - id;
     after_first_round_sort:
-    for(i=1; i<bit_width_hex; i++){
+    for(i=2; i<bit_width_hex; i++){
         id = 1 - id;
 		if(id==0){
 			output_bucket(i, bucket_0, bucket_1, bucket_pointer_0, bucket_pointer_1);
@@ -338,9 +331,9 @@ void radix_sort(int data[dataset_size], int sorted_data[dataset_size]){
     for (l = 0; l < 16; l++) {
 #pragma HLS PIPELINE
 		for(j = 0; j < 16; j++){
-			for(m1=0; m1<bucket_pointer_1[j][l]; m1++){
+			for(m1=0; m1<bucket_pointer_0[j][l]; m1++){
 	#pragma HLS loop_tripcount min=dataset_size/256 max=dataset_size/256// depends on the size of dataset_size/n
-				sorted_data[k] = bucket_1[j][l][m1];
+				sorted_data[k] = bucket_0[j][l][m1];
 				k = k + 1;
 			}
 		}
