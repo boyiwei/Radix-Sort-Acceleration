@@ -298,7 +298,6 @@ void radix_sort(int data[dataset_size], int sorted_data[dataset_size]){
     // First index: pingpong_buffer id
     // Second index: Inside parallel bucket set id
     // Third index: bucket id in a bucket set
-//#pragma HLS ARRAY_PARTITION variable=bucket type=complete dim=1 // If dim=0, means partition all elements completely
 #pragma HLS ARRAY_PARTITION variable=bucket_0 type=complete dim=1
 #pragma HLS ARRAY_PARTITION variable=bucket_0 type=complete dim=2
 #pragma HLS ARRAY_PARTITION variable=bucket_1 type=complete dim=1
