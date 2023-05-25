@@ -1140,33 +1140,36 @@ int bucket_pointer_0, int bucket_pointer_1[16]){
 
 
 void output_bucket_step_1(int i,
-		int bucket0_0[dataset_size/16], int bucket0_1[dataset_size/16], int bucket0_2[dataset_size/16], int bucket0_3[dataset_size/16],
-		int bucket0_4[dataset_size/16], int bucket0_5[dataset_size/16], int bucket0_6[dataset_size/16], int bucket0_7[dataset_size/16],
-		int bucket0_8[dataset_size/16], int bucket0_9[dataset_size/16], int bucket0_10[dataset_size/16], int bucket0_11[dataset_size/16],
-		int bucket0_12[dataset_size/16], int bucket0_13[dataset_size/16], int bucket0_14[dataset_size/16], int bucket0_15[dataset_size/16],
-		int bucket1[16][dataset_size/16],
+		int bucket_0_0[dataset_size/16], int bucket_0_1[dataset_size/16], int bucket_0_2[dataset_size/16], int bucket_0_3[dataset_size/16],
+		int bucket_0_4[dataset_size/16], int bucket_0_5[dataset_size/16], int bucket_0_6[dataset_size/16], int bucket_0_7[dataset_size/16],
+		int bucket_0_8[dataset_size/16], int bucket_0_9[dataset_size/16], int bucket_0_10[dataset_size/16], int bucket_0_11[dataset_size/16],
+		int bucket_0_12[dataset_size/16], int bucket_0_13[dataset_size/16], int bucket_0_14[dataset_size/16], int bucket_0_15[dataset_size/16],
+		int bucket_1_0[dataset_size/16], int bucket_1_1[dataset_size/16], int bucket_1_2[dataset_size/16], int bucket_1_3[dataset_size/16], 
+		int bucket_1_4[dataset_size/16], int bucket_1_5[dataset_size/16], int bucket_1_6[dataset_size/16], int bucket_1_7[dataset_size/16], 
+		int bucket_1_8[dataset_size/16], int bucket_1_9[dataset_size/16], int bucket_1_10[dataset_size/16], int bucket_1_11[dataset_size/16], 
+		int bucket_1_12[dataset_size/16], int bucket_1_13[dataset_size/16], int bucket_1_14[dataset_size/16], int bucket_1_15[dataset_size/16],
 		int bucket_pointer0_0, int bucket_pointer0_1, int bucket_pointer0_2, int bucket_pointer0_3,
 		int bucket_pointer0_4, int bucket_pointer0_5, int bucket_pointer0_6, int bucket_pointer0_7,
 		int bucket_pointer0_8, int bucket_pointer0_9, int bucket_pointer0_10, int bucket_pointer0_11,
 		int bucket_pointer0_12, int bucket_pointer0_13, int bucket_pointer0_14, int bucket_pointer0_15,
 		int bucket_pointer1[16]){
 
-	output_bucket_step_0(i, bucket0_0, bucket1, bucket_pointer0_0, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_1, bucket1, bucket_pointer0_1, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_2, bucket1, bucket_pointer0_2, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_3, bucket1, bucket_pointer0_3, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_4, bucket1, bucket_pointer0_4, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_5, bucket1, bucket_pointer0_5, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_6, bucket1, bucket_pointer0_6, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_7, bucket1, bucket_pointer0_7, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_8, bucket1, bucket_pointer0_8, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_9, bucket1, bucket_pointer0_9, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_10, bucket1, bucket_pointer0_10, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_11, bucket1, bucket_pointer0_11, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_12, bucket1, bucket_pointer0_12, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_13, bucket1, bucket_pointer0_13, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_14, bucket1, bucket_pointer0_14, bucket_pointer1);
-	output_bucket_step_0(i, bucket0_15, bucket1, bucket_pointer0_15, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_0, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_0, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_1, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_1, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_2, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_2, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_3, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_3, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_4, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_4, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_5, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_5, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_6, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_6, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_7, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_7, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_8, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_8, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_9, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_9, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_10, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_10, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_11, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_11, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_12, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_12, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_13, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_13, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_14, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_14, bucket_pointer1);
+	output_bucket_step_0(i, bucket_0_15, bucket_1_0, bucket_1_1, bucket_1_2, bucket_1_3, bucket_1_4, bucket_1_5, bucket_1_6, bucket_1_7, bucket_1_8, bucket_1_9, bucket_1_10, bucket_1_11, bucket_1_12, bucket_1_13, bucket_1_14, bucket_1_15, bucket_pointer0_15, bucket_pointer1);
 
 }
 
