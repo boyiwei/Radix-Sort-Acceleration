@@ -7,10 +7,9 @@
 void input_bucket(int data[dataset_size], int bucket[16][16][dataset_size/16], int bucket_pointer[16][16]){
     for (int j = 0; j < dataset_size; j++) {
 #pragma HLS PIPELINE
-        int shifted0 = data[j] >> 4;	
-		int shifted1 = data[j] >> 8;
-        int radix0 = shifted0 & 0xf;
-		int radix1 = (shifted1 >> 4) & 0xf;
+		int shifted1 = data[j] >> 4;
+        int radix0 = data[j] & 0xf;
+		int radix1 = shifted1 & 0xf;
 		bucket[radix0][radix1][bucket_pointer[radix0][radix1]] = data[j];
         bucket_pointer[radix0][radix1] += 1;
     }
