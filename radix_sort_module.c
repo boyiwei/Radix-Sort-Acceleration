@@ -4,9 +4,9 @@
 #define bit_width_hex bit_width_bin/4
 
 
-void input_bucket_step(int i, int sorted_data[batch_size], int bucket[16][batch_size/16], int bucket_pointer[16], int start){
-    for (int j = start; j-start < batch_size/16; j++) {
-#pragma HLS LOOP_TRIPCOUNT min=batch_size/16 max=batch_size/16
+void input_bucket_step(int i, int sorted_data[batch_size], int bucket[16][batch_size/16+1], int bucket_pointer[16], int start){
+    for (int j = start; j-start < batch_size/16+1; j++) {
+#pragma HLS LOOP_TRIPCOUNT min=batch_size/16+1 max=batch_size/16+1
         int shifted = sorted_data[j] >> (i * 4);
         int ith_radix = shifted & 0xf;
         bucket[ith_radix][bucket_pointer[ith_radix]] = sorted_data[j];
@@ -15,29 +15,29 @@ void input_bucket_step(int i, int sorted_data[batch_size], int bucket[16][batch_
 }
 
 
-void input_bucket(int i, int sorted_data[batch_size], int bucket[16][16][batch_size/16], int bucket_pointer[16][16]) {
+void input_bucket(int i, int sorted_data[batch_size], int bucket[16][16][batch_size/16+1], int bucket_pointer[16][16]) {
 //#pragma HLS DATAFLOW
     input_bucket_step(i, sorted_data, bucket[0], bucket_pointer[0], 0);
-    input_bucket_step(i, sorted_data, bucket[1], bucket_pointer[1], batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[2], bucket_pointer[2], 2*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[3], bucket_pointer[3], 3*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[4], bucket_pointer[4], 4*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[5], bucket_pointer[5], 5*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[6], bucket_pointer[6], 6*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[7], bucket_pointer[7], 7*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[8], bucket_pointer[8], 8*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[9], bucket_pointer[9], 9*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[10], bucket_pointer[10], 10*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[11], bucket_pointer[11], 11*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[12], bucket_pointer[12], 12*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[13], bucket_pointer[13], 13*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[14], bucket_pointer[14], 14*batch_size/16);
-    input_bucket_step(i, sorted_data, bucket[15], bucket_pointer[15], 15*batch_size/16);
+    input_bucket_step(i, sorted_data, bucket[1], bucket_pointer[1], batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[2], bucket_pointer[2], 2*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[3], bucket_pointer[3], 3*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[4], bucket_pointer[4], 4*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[5], bucket_pointer[5], 5*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[6], bucket_pointer[6], 6*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[7], bucket_pointer[7], 7*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[8], bucket_pointer[8], 8*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[9], bucket_pointer[9], 9*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[10], bucket_pointer[10], 10*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[11], bucket_pointer[11], 11*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[12], bucket_pointer[12], 12*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[13], bucket_pointer[13], 13*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[14], bucket_pointer[14], 14*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[15], bucket_pointer[15], 15*batch_size/16+1);
 
 }
 
 
-void output_bucket_step0(int i, int bucket0[batch_size/16], int bucket1[16][batch_size/16], int bucket_pointer0, int bucket_pointer1[16]){
+void output_bucket_step0(int i, int bucket0[batch_size/16+1], int bucket1[16][batch_size/16+1], int bucket_pointer0, int bucket_pointer1[16]){
 	int m;
 	int shifted;
 	int ith_radix;
@@ -52,11 +52,11 @@ void output_bucket_step0(int i, int bucket0[batch_size/16], int bucket1[16][batc
 
 
 void output_bucket_step1(int i,
-		int bucket0_0[batch_size/16], int bucket0_1[batch_size/16], int bucket0_2[batch_size/16], int bucket0_3[batch_size/16],
-		int bucket0_4[batch_size/16], int bucket0_5[batch_size/16], int bucket0_6[batch_size/16], int bucket0_7[batch_size/16],
-		int bucket0_8[batch_size/16], int bucket0_9[batch_size/16], int bucket0_10[batch_size/16], int bucket0_11[batch_size/16],
-		int bucket0_12[batch_size/16], int bucket0_13[batch_size/16], int bucket0_14[batch_size/16], int bucket0_15[batch_size/16],
-		int bucket1[16][batch_size/16],
+		int bucket0_0[batch_size/16+1], int bucket0_1[batch_size/16+1], int bucket0_2[batch_size/16+1], int bucket0_3[batch_size/16+1],
+		int bucket0_4[batch_size/16+1], int bucket0_5[batch_size/16+1], int bucket0_6[batch_size/16+1], int bucket0_7[batch_size/16+1],
+		int bucket0_8[batch_size/16+1], int bucket0_9[batch_size/16+1], int bucket0_10[batch_size/16+1], int bucket0_11[batch_size/16+1],
+		int bucket0_12[batch_size/16+1], int bucket0_13[batch_size/16+1], int bucket0_14[batch_size/16+1], int bucket0_15[batch_size/16+1],
+		int bucket1[16][batch_size/16+1],
 		int bucket_pointer0_0, int bucket_pointer0_1, int bucket_pointer0_2, int bucket_pointer0_3,
 		int bucket_pointer0_4, int bucket_pointer0_5, int bucket_pointer0_6, int bucket_pointer0_7,
 		int bucket_pointer0_8, int bucket_pointer0_9, int bucket_pointer0_10, int bucket_pointer0_11,
@@ -86,7 +86,7 @@ void output_bucket_step1(int i,
 }
 
 
-void output_bucket(int i, int bucket0[16][16][batch_size/16], int bucket1[16][16][batch_size/16], int bucket_pointer0[16][16], int bucket_pointer1[16][16]){
+void output_bucket(int i, int bucket0[16][16][batch_size/16+1], int bucket1[16][16][batch_size/16+1], int bucket_pointer0[16][16], int bucket_pointer1[16][16]){
     /*
      * i: ith_radix
      * bucket0: output_bucket
@@ -307,8 +307,8 @@ void output_bucket(int i, int bucket0[16][16][batch_size/16], int bucket1[16][16
 
 
 void radix_sort(int data[batch_size], int sorted_data[batch_size]){
-    static int bucket_0[16][16][batch_size/16]; // Be careful that batch_size can't be an odd number.
-	static int bucket_1[16][16][batch_size/16];
+    static int bucket_0[16][16][batch_size/16+1]; // Be careful that batch_size can't be an odd number.
+	static int bucket_1[16][16][batch_size/16+1];
     // First index: pingpong_buffer id
     // Second index: Inside parallel bucket set id
     // Third index:  bucket id in a bucket set
