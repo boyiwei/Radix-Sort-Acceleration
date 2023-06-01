@@ -79,7 +79,7 @@ void radix_hex_kmerge_top(int dataset[dataset_size], int output[dataset_size]){
 			input[i][j] = dataset[i*batch_size+j];
 		}
 	}
-	multi_radix_hex_kmerge(input, output_temp);
+	multi_radix_hex_kmerge(input, output);
 
 }
 

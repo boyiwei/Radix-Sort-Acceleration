@@ -313,8 +313,8 @@ void radix_sort(int data[batch_size], int sorted_data[batch_size]){
     // Second index: Inside parallel bucket set id
     // Third index:  bucket id in a bucket set
     // Fourth index: Size of each bucket
-    static int bucket_pointer_0[16][16] = {0};
-	static int bucket_pointer_1[16][16] = {0};
+    int bucket_pointer_0[16][16] = {0};
+	int bucket_pointer_1[16][16] = {0};
     // First index: pingpong_buffer id
     // Second index: Inside parallel bucket set id
     // Third index: bucket id in a bucket set
@@ -366,12 +366,12 @@ void radix_sort_test(){
 #include "/home/boyiw7/dataset_gen/dataset_1M_1.h"
     };
 
-    static int output[batch_size];
+    static int output[dataset_size];
     int i;
 
     radix_sort(dataset, output);
 
-    for(i=0; i<batch_size; i++){
+    for(i=0; i<dataset_size; i++){
         printf("Sorted_results: rank %d, value= %d \n", i, output[i]);
     }
 }
