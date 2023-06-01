@@ -6,7 +6,10 @@
     </Simulation>
     <files xmlns="">
         <file name="../radix_sort_tb.c" sc="0" tb="1" cflags=" -Wno-unknown-pragmas -Wno-unknown-pragmas -Wno-unknown-pragmas" csimflags=" -Wno-unknown-pragmas" blackbox="false"/>
-        <file name="Radix_Sort_Acceleration/input_bucket.c" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="Radix_Sort_Acceleration/radix_sort_module.c" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="Radix_Sort_Acceleration/radix_hex_kmerge.c" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="Radix_Sort_Acceleration/merge_sort.c" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
+        <file name="Radix_Sort_Acceleration/dataset_size.h" sc="0" tb="false" cflags="" csimflags="" blackbox="false"/>
     </files>
     <solutions xmlns="">
         <solution name="solution1" status="active"/>

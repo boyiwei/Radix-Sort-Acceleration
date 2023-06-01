@@ -3,7 +3,7 @@
 
 
 int main(){
-	radix_sort_test();
+	radix_hex_kmerge_test();
     return 0;
 }
 

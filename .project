@@ -42,9 +42,24 @@
 			<location>/home/boyiw7/Radix_Sort_Acceleration/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/input_bucket.c</name>
+			<name>source/dataset_size.h</name>
 			<type>1</type>
-			<location>/home/boyiw7/Radix_Sort_Acceleration/input_bucket.c</location>
+			<location>/home/boyiw7/Radix_Sort_Acceleration/dataset_size.h</location>
+		</link>
+		<link>
+			<name>source/merge_sort.c</name>
+			<type>1</type>
+			<location>/home/boyiw7/Radix_Sort_Acceleration/merge_sort.c</location>
+		</link>
+		<link>
+			<name>source/radix_hex_kmerge.c</name>
+			<type>1</type>
+			<location>/home/boyiw7/Radix_Sort_Acceleration/radix_hex_kmerge.c</location>
+		</link>
+		<link>
+			<name>source/radix_sort_module.c</name>
+			<type>1</type>
+			<location>/home/boyiw7/Radix_Sort_Acceleration/radix_sort_module.c</location>
 		</link>
 		<link>
 			<name>testbench/radix_sort_tb.c</name>

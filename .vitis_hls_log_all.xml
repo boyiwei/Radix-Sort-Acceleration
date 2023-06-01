@@ -3,6 +3,10 @@
   <errorLogs>
     <logs>
       <synLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="Radix_Sort_Acceleration" solutionName="solution1" date="2023-05-31T22:03:15.986-0700"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="Radix_Sort_Acceleration" solutionName="solution1" date="2023-05-31T22:00:34.485-0700"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
@@ -22,6 +26,7 @@
         <logs message="WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_354_2' (Radix_Sort_Acceleration/input_bucket.c:330) in function 'radix_sort': cannot completely unroll a loop with a variable trip count.&#xA;Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-936.html" projectName="Radix_Sort_Acceleration" solutionName="solution1" date="2023-05-31T18:38:54.566-0700" type="Warning"/>
         <logs message="WARNING: [HLS 200-936] Cannot unroll loop 'VITIS_LOOP_354_2' (Radix_Sort_Acceleration/input_bucket.c:330) in function 'radix_sort': cannot completely unroll a loop with a variable trip count.&#xA;Resolution: For help on HLS 200-936 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-936.html" projectName="Radix_Sort_Acceleration" solutionName="solution1" date="2023-05-31T18:38:54.562-0700" type="Warning"/>
       </synLog>
+      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>
