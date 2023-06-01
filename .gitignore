@@ -1,2 +1,4 @@
 *.log
 /solution1
+.vitis_hls_log_all.xml
+clipboard.c
