@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "dataset_size.h": "c",
+        "random": "c",
+        "limits": "c",
+        "algorithm": "c"
+    }
+}
