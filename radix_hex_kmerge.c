@@ -89,12 +89,12 @@ void radix_hex_kmerge_test(){
 #include "/home/boyiw7/dataset_gen/dataset_1M_1.h"
     };
 
-    static int output[batch_size];
+    static int output[dataset_size];
     int i;
 
     radix_hex_kmerge_top(dataset, output);
 
-    for(i=0; i<batch_size; i++){
+    for(i=0; i<dataset_size; i++){
         printf("Sorted_results: rank %d, value= %d \n", i, output[i]);
     }
 }
