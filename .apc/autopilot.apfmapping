@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
+    <originFiles name="dataset_size.h" path="/home/boyiw7/Radix_Sort_Acceleration/dataset_size.h"/>
     <originFiles name="merge_sort.c" path="/home/boyiw7/Radix_Sort_Acceleration/merge_sort.c"/>
     <originFiles name="radix_hex_kmerge.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_hex_kmerge.c"/>
     <originFiles name="radix_sort_module.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_sort_module.c"/>
-    <originFiles name="dataset_size.h" path="/home/boyiw7/Radix_Sort_Acceleration/dataset_size.h"/>
   </source>
   <testbench>
     <originFiles name="radix_sort_tb.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_sort_tb.c"/>

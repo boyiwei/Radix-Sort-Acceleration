@@ -5,7 +5,7 @@
 
 
 void input_bucket_step(int i, int sorted_data[batch_size], int bucket[16][batch_size/16+1], int bucket_pointer[16], int start){
-    for (int j = start; j-start < batch_size/16+1; j++) {
+    for (int j = start; (j-start < batch_size/16+1)&&(j<batch_size); j++) {
 #pragma HLS LOOP_TRIPCOUNT min=batch_size/16+1 max=batch_size/16+1
         int shifted = sorted_data[j] >> (i * 4);
         int ith_radix = shifted & 0xf;
@@ -19,20 +19,20 @@ void input_bucket(int i, int sorted_data[batch_size], int bucket[16][16][batch_s
 //#pragma HLS DATAFLOW
     input_bucket_step(i, sorted_data, bucket[0], bucket_pointer[0], 0);
     input_bucket_step(i, sorted_data, bucket[1], bucket_pointer[1], batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[2], bucket_pointer[2], 2*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[3], bucket_pointer[3], 3*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[4], bucket_pointer[4], 4*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[5], bucket_pointer[5], 5*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[6], bucket_pointer[6], 6*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[7], bucket_pointer[7], 7*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[8], bucket_pointer[8], 8*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[9], bucket_pointer[9], 9*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[10], bucket_pointer[10], 10*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[11], bucket_pointer[11], 11*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[12], bucket_pointer[12], 12*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[13], bucket_pointer[13], 13*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[14], bucket_pointer[14], 14*batch_size/16+1);
-    input_bucket_step(i, sorted_data, bucket[15], bucket_pointer[15], 15*batch_size/16+1);
+    input_bucket_step(i, sorted_data, bucket[2], bucket_pointer[2], 2*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[3], bucket_pointer[3], 3*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[4], bucket_pointer[4], 4*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[5], bucket_pointer[5], 5*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[6], bucket_pointer[6], 6*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[7], bucket_pointer[7], 7*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[8], bucket_pointer[8], 8*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[9], bucket_pointer[9], 9*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[10], bucket_pointer[10], 10*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[11], bucket_pointer[11], 11*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[12], bucket_pointer[12], 12*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[13], bucket_pointer[13], 13*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[14], bucket_pointer[14], 14*(batch_size/16+1));
+    input_bucket_step(i, sorted_data, bucket[15], bucket_pointer[15], 15*(batch_size/16+1));
 
 }
 
