@@ -52,6 +52,11 @@
 			<location>/home/boyiw7/Radix_Sort_Acceleration/merge_sort.c</location>
 		</link>
 		<link>
+			<name>source/merge_sort.h</name>
+			<type>1</type>
+			<location>/home/boyiw7/Radix_Sort_Acceleration/merge_sort.h</location>
+		</link>
+		<link>
 			<name>source/radix_hex_kmerge.c</name>
 			<type>1</type>
 			<location>/home/boyiw7/Radix_Sort_Acceleration/radix_hex_kmerge.c</location>

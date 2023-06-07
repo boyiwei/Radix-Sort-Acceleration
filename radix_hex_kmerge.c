@@ -26,7 +26,7 @@ void multi_radix_hex_kmerge(int input[64][batch_size], int output[dataset_size])
 #pragma HLS ARRAY_PARTITION variable=temp5 type=complete dim=1
 
     int i;
-#pragma HLS DATAFLOW
+// #pragma HLS DATAFLOW
 
     for(i=0; i<64; i++){
 #pragma HLS UNROLL

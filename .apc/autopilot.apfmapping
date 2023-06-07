@@ -5,6 +5,7 @@
     <originFiles name="merge_sort.c" path="/home/boyiw7/Radix_Sort_Acceleration/merge_sort.c"/>
     <originFiles name="radix_hex_kmerge.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_hex_kmerge.c"/>
     <originFiles name="radix_sort_module.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_sort_module.c"/>
+    <originFiles name="merge_sort.h" path="/home/boyiw7/Radix_Sort_Acceleration/merge_sort.h"/>
   </source>
   <testbench>
     <originFiles name="radix_sort_tb.c" path="/home/boyiw7/Radix_Sort_Acceleration/radix_sort_tb.c"/>
